@@ -1,0 +1,496 @@
+%\documentclass{article}
+\documentclass[12pt]{article}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+\usepackage{geometry}
+\geometry{letterpaper}
+
+%\usepackage{showlabels}
+
+\textwidth = 6.0 in
+\textheight = 8.5 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.2 in
+\headheight = 0.0 in
+\headsep = 0.0 in
+%\parskip = 0.05in
+\parindent = 0.35in
+
+
+%% common definitions
+\def\stackunder#1#2{\mathrel{\mathop{#2}\limits_{#1}}}
+\def\beqn{\begin{eqnarray}}
+\def\eeqn{\end{eqnarray}}
+\def\nn{\nonumber}
+\def\baselinestretch{1.1}
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\ba{\beq\new\begin{array}{c}}
+\def\ea{\end{array}\eeq}
+\def\be{\ba}
+\def\ee{\ea}
+\def\stackreb#1#2{\mathrel{\mathop{#2}\limits_{#1}}}
+\def\Tr{{\rm Tr}}
+\newcommand{\gsim}{\lower.7ex\hbox{$
+\;\stackrel{\textstyle>}{\sim}\;$}}
+\newcommand{\lsim}{\lower.7ex\hbox{$
+\;\stackrel{\textstyle<}{\sim}\;$}}
+
+%%
+\newcommand{\p}{\partial}
+\newcommand{\wt}{\widetilde}
+\newcommand{\ov}{\overline}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\md}{\mathcal{D}}
+\newcommand{\ph}{\phantom}
+
+\newcommand{\GeV}{{\rm GeV}}
+\newcommand{\eV}{{\rm eV}}
+\newcommand{\Heff}{{\mathcal{H}_{\rm eff}}}
+\newcommand{\Leff}{{\mathcal{L}_{\rm eff}}}
+\newcommand{\el}{{\rm EM}}
+\newcommand{\uflavor}{\mathbf{1}_{\rm flavor}}
+\newcommand{\lgr}{\left\lgroup}
+\newcommand{\rgr}{\right\rgroup}
+
+\newcommand{\Mpl}{M_{\rm Pl}}
+\newcommand{\suc}{{{\rm SU}_{\rm C}(3)}}
+\newcommand{\sul}{{{\rm SU}_{\rm L}(2)}}
+\newcommand{\sutw}{{\rm SU}(2)}
+\newcommand{\suth}{{\rm SU}(3)}
+\newcommand{\ue}{{\rm U}(1)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Slash character...
+\def\slashed#1{\setbox0=\hbox{$#1$}             % set a box for #1
+   \dimen0=\wd0                                 % and get its size
+   \setbox1=\hbox{/} \dimen1=\wd1               % get size of /
+   \ifdim\dimen0>\dimen1                        % #1 is bigger
+      \rlap{\hbox to \dimen0{\hfil/\hfil}}      % so center / in box
+      #1                                        % and print #1
+   \else                                        % / is bigger
+      \rlap{\hbox to \dimen1{\hfil$#1$\hfil}}   % so center #1
+      /                                         % and print /
+   \fi}                                        %
+
+%%EXAMPLE:  $\slashed{E}$ or $\slashed{E}_{t}$
+
+%%
+
+\newcommand{\LN}{\Lambda_\text{SU($N$)}}
+\newcommand{\sunu}{{\rm SU($N$) $\times$ U(1)} }
+\newcommand{\sunun}{{\rm SU($N$) $\times$ U(1)}}
+\def\cfl {$\text{SU($N$)}_{\rm C+F}$ }
+\newcommand{\mUp}{m_{\rm U(1)}^{+}}
+\newcommand{\mUm}{m_{\rm U(1)}^{-}}
+\newcommand{\mNp}{m_\text{SU($N$)}^{+}}
+\newcommand{\mNm}{m_\text{SU($N$)}^{-}}
+\newcommand{\AU}{\mc{A}^{\rm U(1)}}
+\newcommand{\AN}{\mc{A}^\text{SU($N$)}}
+\newcommand{\aU}{a^{\rm U(1)}}
+\newcommand{\aN}{a^\text{SU($N$)}}
+\newcommand{\baU}{\ov{a}{}^{\rm U(1)}}
+\newcommand{\baN}{\ov{a}{}^\text{SU($N$)}}
+\newcommand{\lU}{\lambda^{\rm U(1)}}
+\newcommand{\lN}{\lambda^\text{SU($N$)}}
+%\newcommand{\Tr}{{\rm Tr\,}}
+\newcommand{\bxir}{\ov{\xi}{}_R}
+\newcommand{\bxil}{\ov{\xi}{}_L}
+\newcommand{\xir}{\xi_R}
+\newcommand{\xil}{\xi_L}
+\newcommand{\bzl}{\ov{\zeta}{}_L}
+\newcommand{\bzr}{\ov{\zeta}{}_R}
+\newcommand{\zr}{\zeta_R}
+\newcommand{\zl}{\zeta_L}
+\newcommand{\nbar}{\ov{n}}
+
+\newcommand{\loU}{\lambda_0^{\rm U(1)}}
+\newcommand{\llU}{\lambda_1^{\rm U(1)}}
+\newcommand{\loN}{\lambda_0^\text{SU($N$)}}
+\newcommand{\llN}{\lambda_1^\text{SU($N$)}}
+\newcommand{\poU}{\psi_0^{\rm U(1)}}
+\newcommand{\plU}{\psi_1^{\rm U(1)}}
+\newcommand{\poN}{\psi_0^\text{SU($N$)}}
+\newcommand{\plN}{\psi_1^\text{SU($N$)}}
+
+\newcommand{\CPC}{CP($N-1$)$\times$C }
+\newcommand{\CPCn}{CP($N-1$)$\times$C}
+
+\newcommand{\MN}{M_\text{SU($N$)}}
+\newcommand{\MU}{M_{\rm U(1)}}
+
+\newcommand{\tgamma}{\wt{\gamma}}
+\newcommand{\btgamma}{\ov{\tgamma}}
+
+\begin{document}
+
+\centerline{\Huge\bf The Central Idea}
+
+\vspace{2.0mm}
+
+\begin{minipage}[b]{0.76cm}
+                \fontseries{bx}
+                \fontfamily{pnc}
+                \fontsize{44}{12}
+                \selectfont
+                T
+\end{minipage}
+\begin{minipage}[b]{3.36cm}
+        	\Large\fontfamily{pnc}\selectfont
+		\textsc{he kinetic}
+\end{minipage}
+	mixing matrix can be specified in an explicitly diagonalized form
+\beq
+\label{M}
+	\mc{M}  ~~~~=~~~~  
+			\lgr\; \begin{matrix}
+				\cos\, \theta    &    - \sin\, \theta \\
+				\sin\, \theta    &    \ph- \cos\, \theta
+			\end{matrix} \;\rgr
+			\lgr\; \begin{matrix}
+			     		a^2    &        \\
+					       &    b^2
+			\end{matrix} \;\rgr
+			\lgr\; \begin{matrix}
+				\ph-\cos\, \theta    &    \sin\, \theta \\
+				- \sin\, \theta    &    \cos\, \theta
+			\end{matrix} \;\rgr
+			.
+\eeq
+
+	The quantity $ a^2 $ will be the effective coupling constant of the photon, and therefore
+	we choose 
+\[
+	a^2  ~~\simeq~~  1\,.
+\]
+	Meanwhile, the quantity $ b^2 $ will be the coupling constant of the hidden photon.
+	We would like to have the hidden photon completely decoupled by the end of inflation, and also
+	never to be at strong coupling.
+	Therefore, we choose $ b^2 $ to be growing,
+\[
+	b^2  ~~\propto~~ a^{2n}(\tau)\,,
+\]
+	where $ a(\tau) $ is the scale factor\footnote{
+	To distinguish the scale factor $ a(\tau) $ from the inverse coupling constant $ a^2 $ 
+	we will always write it as $ a(\tau) $ --- a function of $ \tau $.
+	Note that on the contrary, $ a^2 $ is practically constant in our scenario.}.
+	One cannot consistently impose the alternative condition, 
+$ b^2 ~~\propto~~ a^{-2n}(\tau) $.
+	In this case $ b(\tau) $ would ultimately become very small, 
+	and the quantum corretions would take over and alter its value.
+
+	The kinetic matrix \eqref{M} can be evaluated to the following form,
+\beq
+\label{Mready}
+	\mc{M}  ~~=~~  
+			\lgr\;\;\, \begin{matrix}
+				    1           \,&\,    \epsilon    \\
+				    \epsilon    \,&\,    f^2
+			     \end{matrix} \;\;\rgr,
+\eeq
+	where
+\[
+	1  ~~\ll~~  f^2
+	\qquad\qquad
+	\text{and}
+	\qquad\qquad
+	\epsilon  ~~\ll~~  f\,.
+\]
+	We define our Lagrangian such that this matrix mixes the observable photon with the hidden photon.
+	The small value of the coupling of the hidden photon to matter is ensured by the growing 
+$ f^2(\tau) ~\simeq~ b^2(\tau) $.
+	On the other hand, the coupling constant of the photon to matter must remain 
+	of order one at all times. 
+%	For this reason, $ \theta $ cannot be a constant, but must decrease with time.
+	Exactly how this is realized we will show in the next subsection.
+
+\pagebreak
+
+\vspace{1.0cm}
+\centerline{*\qquad\qquad\qquad*\qquad\qquad\qquad*}
+\vspace{1.0cm}
+
+	We have already defined that 
+\[
+	a^2    ~~=~~    1\,,
+	\qquad\qquad
+	\text{and}
+	\qquad\qquad
+	b^2    ~~\simeq~~    a^{2n}(\tau).
+\]
+	Let us accept that these are in fact exact equalities.
+	For the coupling constant of the real photon to remain of order one at all times, 
+	$ \theta $ must decrease in time,
+\[
+	\theta    ~~\simeq~~    \sin\,\theta    ~~\propto~~    a^{-\, n \,-\, \lambda}(\tau) \,.
+\]
+	Here $ \lambda $ is a small ``excess'' power, say $ \lambda  ~\sim~ 1/2 $.
+	These requirements ensure that the mixing matrix takes the form as that of Eq.~\eqref{Mready}.
+
+	The time dependences of $ \epsilon(\tau) $ and $ f^2(\tau) $ are,
+\[
+	f^2    ~~=~~    a^{2n}(\tau)\,
+\]
+	and
+\[
+	\epsilon    ~~=~~    -\, a^{n \,-\, \lambda}(\tau)\,.
+\]
+	The condition $ \epsilon ~\ll~ f(\tau) $ is also met.
+
+	At this point we can write down the Lagrangian which we have in mind,
+\[
+	\mc{L}    ~~=~~    \lgr F_{\mu\nu}  \quad G_{\mu\nu} \rgr  \mc{M}  
+			\lgr \begin{matrix}
+			     		F_{\mu\nu}  \\
+					G_{\mu\nu}
+			     \end{matrix} \rgr
+			~~+~~
+			F^\mu\, J_\mu\,,
+\]
+	where $ J^\mu $ is the matter current, and we have suppressed factors like $ 1/4\pi $.
+	It is our free will to define how the gauge fields couple to matter.
+	Explicitly, $ F^\mu $ becomes the real photon and $ G^\mu $ the hidden one. 
+	The behaviour of $ F^\mu $ is slightly altered as compared to that of the usual U(1) photon by the presence of $ G^\mu $.
+
+	
+\vspace{1.0cm}
+\centerline{*\qquad\qquad\qquad*\qquad\qquad\qquad*}
+\vspace{1.0cm}
+
+	Here we sketch the underlying ideas of the scenario.
+	The kinetic term written explicitly is
+\beq
+	\lgr F_{\mu\nu}\, \quad G_{\mu\nu} \rgr 
+	\lgr\; \begin{matrix}
+				1          &    \epsilon  \\
+				\epsilon   &    f^2
+	\end{matrix} \;\rgr
+	\lgr\, \begin{matrix}
+		F_{\mu\nu}  \\
+		G_{\mu\nu}
+	     \end{matrix} \,\rgr,
+\eeq
+	where again $ F_{\mu} $ and $ G_{\mu} $ are the real and the hidden photons.
+	Although we will not need to diagonalize the kinetic matrix in the actual calculations, 
+	we assume we do so just to provide a supporting argument.
+
+	The form of the kinetic matrix \eqref{M} already gives the diagonalized form,
+\beq
+\label{diag}
+	a^2\, A_{\mu\nu}^2  ~~+~~  b^2\, B_{\mu\nu}^2  ~~+~~  \text{{\small one-derivative} \;and\; {\small zero-derivative terms}.}
+\eeq
+	Here $ A_{\mu\nu} $ and $ B_{\mu\nu} $ are the rotated fieldstrengths.
+	Now the rotation $ \sin \theta $ is applied to the gauge fields $ A_\mu $ and $ B_\mu $ rather than
+	to the fieldstrengths.
+	Since this rotation is time-dependent, it produces terms where less than two derivatives 
+	are applied to $ A_{\mu} $ and $ B_{\mu} $.
+	Ignore these terms now.
+
+	What we have come to, is two decoupled instances of electrodynamics, one with a finite gauge coupling,
+	the other one with a gauge coupling becoming very small.
+	It is known that when the coupling constant decreases with time ({\it i.e.} the inverse coupling $ b^2(\tau) $ increases),
+	the electrodynamics {\it can} produce the magnetic field for itself.
+	This way, $ B_{\mu} $ generates the magnetic field $ \vec{B}_{(B)} $, 
+	and it does not suffer from the strong coupling problem ---
+	there is no constraint that $ b^2(\tau) $ nowadays be of order one. 
+
+	But then, as we said, $ A_\mu $ and $ B_\mu $ are not the observable fields --- 
+	rather, $ F_\mu $ and $ G_\mu $ are.
+	Since the observable fields are linear combinations of $ A_\mu $ and $ B_\mu $, 
+	by generating $ \vec{B}_{(B)} $ we also generate $ \vec{B}_{(F)} $, 
+	that is, the observable magnetic field.
+
+	Although these arguments are heuristic, we do expect them to give the rough idea 
+	of the dynamics of the fields and expect that the extra terms in Eq.~\eqref{diag} can be neglected in some sense.
+	Indeed, if the two instances of electrodynamics were completely decoupled, 
+	the two fields would develop by themselves. 
+	The mixing between them is so weak that hardly it can affect their dynamics on a significant level.
+
+	The actual calculations will not rely on this discussion.
+
+
+\vspace{1.0cm}
+\centerline{*\qquad\qquad\qquad*\qquad\qquad\qquad*}
+\vspace{1.0cm}
+
+	
+	Let us call the undiagonalizeds fields $ \Phi_\mu $,
+\beq
+	\lgr  F_\mu\,, \quad G_\mu  \rgr    ~~\equiv~~    \Phi_\mu\,.
+\eeq
+
+
+	As we know, at the time when a mode has exited the horizon, the equation of motion for
+	it can be written as
+\beq
+	\big(\, \mc{M} \cdot \Phi^\prime \,\big)^\prime    ~~=~~    0\,,
+	\qquad\qquad
+	\text{or}
+	\qquad\qquad
+	\mc{M} \cdot \Phi^\prime    ~~=~~    \text{const}.
+\eeq
+	Here we assume that $ \Phi $ is written in terms of polarizations $ \Phi_{\pm} $.
+
+	Fixing some time $ \tau_* $, we have
+\beq
+	\mc{M} \cdot \Phi^\prime    ~~=~~    \mc{M}_* \cdot \Phi_*^\prime
+	\qquad\qquad
+	\text{for that $\tau_*$}.
+\eeq
+
+	This leads to the differential equation
+\beq
+\label{diffeq}
+	\Phi^\prime  ~~=~~ \mc{M}^{-1} \cdot \mc{M}_*\, \Phi_*^\prime\,.
+\eeq
+
+	The right hand side of this equation is in principle a known function of time, as long as
+	we find the inverse of matrix $ \mc{M} $.
+	The rest of the right hand side is just a set of constants.
+	We expect the inverse of $ \mc{M} $ to be expressible as a combination of powers
+	of $ a(\tau) $ --- that is, as a combination of powers of $ \tau $ itself.
+
+
+\vspace{1.0cm}
+\centerline{*\qquad\qquad\qquad*\qquad\qquad\qquad*}
+\vspace{1.0cm}
+
+	
+	Quite generally,
+\beq
+\label{invM}
+	\mc{M}^{-1}   ~~=~~    \frac{1}{f^2 \,-\, \epsilon^2}\,
+					\lgr \begin{matrix}
+						\ph{-} f^2    &    -\epsilon    \\
+						-\epsilon   &    \ph- 1
+					\end{matrix} \;\; \rgr  .
+\eeq
+	
+	The denominator can just be expanded,
+\beq
+	\frac{1}{f^2 \,-\, \epsilon^2}    ~~=~~    
+		\frac{1}{f^2}\, 
+		\lgr  1  ~~+~~  \frac{\epsilon^2}{f^2}  ~~+~~  \frac{\epsilon^4}{f^4}  ~~+~~  \dots \rgr.
+\eeq
+	This gives the inverse matrix \eqref{invM} the form of a series in powers of the conformal time.
+	
+	Using this, we re-write the system of equations \eqref{diffeq} in terms of the conformal time.
+	The leading terms in the system generally depend on the relative magnitudes of $ n $ and $ \lambda $.
+	Assuming, for example $ \lambda \ll n $, the system, written in terms of polarizations, is
+\begin{align}
+%
+\notag
+	F_\lambda^\prime    & ~~=~~    \text{\small const}  ~~+~~  \text{\small const} \cdot \tau^{2 \lambda}  ~~+~~  \dots
+	\\[3.4mm]
+%
+	G_\lambda^\prime    & ~~=~~    \text{\small const} \cdot \tau^{n \,+\, \lambda}  ~~+~~  \text{\small const} \cdot \tau^{n \,+\, 3\lambda}
+					~~+~~  \dots\,.
+\end{align}
+
+%\begin{align}
+%%
+%\notag
+%	F_\lambda^\prime    & ~~=~~    \ph{\frac{\epsilon}{f^2} \cdot} \text{\small const}  ~~+~~  \frac{\epsilon}{f^2} \cdot \text{\small const}  
+%	\\
+%%
+%	G_\lambda^\prime    & ~~=~~    \frac{\epsilon}{f^2} \cdot \text{\small const}  ~~+~~ \frac{1}{f^2} \cdot \text{\small const}\,.
+%\end{align}
+%	
+%
+%	Now, taking into account that $ a(\tau) \,\propto\, 1/\tau $, let us re-write the equations in $ \tau $,
+%\begin{align}
+%%
+%\notag
+%	F_\lambda^\prime    & ~~=~~    \text{\small const}  ~~+~~  \text{\small const} \cdot \tau^{n \,-\, \lambda} 
+%	\\[3.4mm]
+%%
+%	G_\lambda^\prime    & ~~=~~    \text{\small const} \cdot \tau^{n \,-\, \lambda}  ~~+~~  \text{\small const} \cdot \tau^{2n}\,.
+%\end{align}
+
+	Integration of these equations gives powers of $ \tau $ one greater,
+\begin{align}
+%
+\notag
+	F_\lambda    & ~~=~~    \text{\small const}  ~~+~~  \text{\small const} \cdot \tau  ~~+~~  \text{\small const} \cdot \tau^{2 \lambda \,+\, 1} 
+	\\[3.8mm]
+%
+\label{syssol}
+	G_\lambda    & ~~=~~    \text{\small const}  ~~+~~  
+				\text{\small const} \cdot \tau^{n \,+\, \lambda \,+\, 1}  ~~+~~  \text{\small const} \cdot \tau^{n \,+\, 3 \lambda \,+\, 1}\,.
+\end{align}
+
+	The initial conditions for these equations are given by the values of the fields at some time $ \tau_* $ in the past
+	(it should not matter whether it is the same $ \tau_* $ as before or not)
+\begin{align}
+%
+\notag
+	F^*_\lambda    & ~~=~~    \text{\small const}  ~~+~~  \text{\small const} \cdot \tau_*  ~~+~~  \text{\small const} \cdot \tau_*^{2 \lambda \,+\, 1} 
+	\\[3.8mm]
+%
+	G^*_\lambda    & ~~=~~    \text{\small const}  ~~+~~  
+				\text{\small const} \cdot \tau_*^{n \,+\, \lambda \,+\, 1}  ~~+~~  \text{\small const} \cdot \tau_*^{n \,+\, 3 \lambda \,+\, 1}\,.
+\end{align}
+
+	This determines the constants of integration in Eq.~\eqref{syssol},
+\begin{align}
+%
+\label{sysfull}
+	F_{\lambda}    & ~~=~~    F_\lambda^*  ~~+~~  \text{\small const} \cdot (\, \tau ~-~ \tau_* \,) 
+						~~+~~  \text{\small const} \cdot (\, \tau^{n \,+\, \lambda \,+\, 1} ~-~ \tau_*^{n \,+\, \lambda \,+\, 1} \,)
+	\\[3.8mm]
+%
+\notag
+	G_{\lambda}    & ~~=~~    G_\lambda^*  ~~+~~  \text{\small const} \cdot (\, \tau^{n \,+\, \lambda \,+\, 1} ~-~ \tau_*^{n \,+\, \lambda \,+\, 1} \,)
+						~~+~~  \dots\,.
+\end{align}
+
+	We presume that the magnetic field was generated {\it during} the inflation, most certainly, in the end.
+	At time $ \tau_* $ therefore, the fields were negligible, 
+\[
+	F_\lambda^*    ~~\sim~~    G_\lambda^*    ~~\sim~~    0\,.
+\]
+	This allows us to re-write Eq.~\eqref{sysfull} as
+\begin{align}
+%
+\notag
+	F_{\lambda}(\tau)    & ~~=~~    \text{\small const} \cdot (\, \tau ~-~ \tau_* \,) 
+					~~+~~  \text{\small const} \cdot (\, \tau^{n \,+\, \lambda \,+\, 1} ~-~ \tau_*^{n \,+\, \lambda \,+\, 1} \,)
+	\\[3.8mm]
+%
+	G_{\lambda}(\tau)    & ~~=~~    \text{\small const} \cdot (\, \tau^{n \,+\, \lambda \,+\, 1} ~-~ \tau_*^{n \,+\, \lambda \,+\, 1} \,)
+					~~+~~  \dots\,.
+\end{align}
+	
+	Since $ \tau ~\propto~ e^{H t} $, we have an exponential approach to the values of the fields at the present time,
+	which are
+\begin{align}
+%
+\notag
+	F_{\lambda}^{(0)}    & ~~\simeq~~    \text{\small const} \cdot \tau_*    ~~+~~    \text{\small const} \cdot \tau_*^{n \,+\, \lambda \,+\, 1} 
+						~~+~~    \dots
+	\\[3.8mm]
+%
+\label{solnow}
+	G_{\lambda}^{(0)}    & ~~\simeq~~    \text{\small const} \cdot \tau_*^{n \,+\, \lambda \,+\, 1}    ~~+~~    \dots\,.
+\end{align}
+
+	Even though the inflation formally starts at $ \tau \,\to\, -\infty $, time $ \tau_* $ can be chosen to be finite, 
+	such that the conditions \eqref{solnow} can be satisfied.
+
+	We integrate the solution for $ F_\lambda $ over all the modes to obtain the magnetic field
+\[
+	\rho_B    ~~=~~    \frac{4\pi}{a^4(t_0)}\, \!\!
+			{ \lower 2.8ex \hbox{    $   \stackrel{\displaystyle \stackrel{\;\;\;\;\;\; H a_0}{\int}}
+							{\scriptstyle \!\!\!\!\!\! H a_i}  $    }    }
+			\!\!\!\!\!\! \, dk\, k^4\, \big( F_{\lambda}^{(0)} \big)^2
+			~~\simeq~~ 4\pi\, H^5\, a(t_0)\, \big( F_{\lambda}^{(0)} \big)^2\,.
+\]
+
+	We believe that the set of constants at our disposal --- $ n $, $ \lambda $, $ \tau_* $ and the proportionality constants
+	are enough to provide a reasonable fit to the observed constraints on the magnetic field.
+%	For this, generically, one can solve the system \eqref{diffeq} analytically, which is not too hard to do.
+	The criterion of naturalness is that no constant is required to be on the order of $ 10^{60} $ or similar.
+
+\end{document}

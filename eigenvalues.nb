@@ -1,0 +1,334 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     10801,        325]
+NotebookOptionsPosition[      9863,        288]
+NotebookOutlinePosition[     10207,        303]
+CellTagsIndexPosition[     10164,        300]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Check the eigenvalues", "Title",
+ CellChangeTimes->{{3.5491388271816297`*^9, 3.5491388319552383`*^9}}],
+
+Cell["The determinant", "Text",
+ CellChangeTimes->{{3.549138860456488*^9, 3.5491388742157125`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[CapitalDelta]", "[", "\[Lambda]_", "]"}], "  ", ":=", "  ", 
+  RowBox[{"Det", "[", 
+   RowBox[{"(", "\[NoBreak]", GridBox[{
+      {
+       RowBox[{"\[Mu]", " ", "-", " ", "\[Lambda]"}], "\[Nu]", "0", 
+       RowBox[{"-", "\[Sigma]"}]},
+      {"\[Nu]", 
+       RowBox[{"\[Mu]", " ", "-", " ", "\[Lambda]"}], 
+       RowBox[{"s", " ", "-", " ", "\[Sigma]"}], "0"},
+      {"0", 
+       RowBox[{"-", 
+        RowBox[{"(", 
+         RowBox[{"s", " ", "-", " ", "\[Sigma]"}], ")"}]}], 
+       RowBox[{"\[Mu]", " ", "-", " ", "\[Lambda]"}], 
+       RowBox[{"-", "\[Nu]"}]},
+      {"\[Sigma]", "0", 
+       RowBox[{"-", "\[Nu]"}], 
+       RowBox[{"\[Mu]", " ", "-", " ", "\[Lambda]"}]}
+     }], "\[NoBreak]", ")"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.54913887841212*^9, 3.5491389753350897`*^9}, {
+  3.5491390359567966`*^9, 3.5491390377663994`*^9}, {3.549139268522005*^9, 
+  3.549139273139613*^9}}],
+
+Cell["The four solutions", "Text",
+ CellChangeTimes->{{3.549139079122072*^9, 3.5491390813216763`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    SubscriptBox["d", "1"], "[", 
+    RowBox[{"s_", ",", "  ", "\[Nu]_", ",", "  ", "\[Sigma]_"}], "]"}], "  ", 
+   ":=", "  ", 
+   SqrtBox[
+    FractionBox[
+     RowBox[{
+      RowBox[{"-", " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"s", " ", "-", " ", "\[Sigma]"}], ")"}], "2"]}], "   ", "-", 
+      "  ", 
+      SuperscriptBox["\[Sigma]", "2"], "   ", "+", "   ", 
+      RowBox[{"2", " ", 
+       SuperscriptBox["\[Nu]", "2"]}], "   ", "+", "   ", 
+      SqrtBox[
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"s", " ", "-", " ", "\[Sigma]"}], ")"}], "4"], "  ", "-", 
+        "  ", 
+        RowBox[{"2", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           SuperscriptBox["\[Sigma]", "2"], " ", "+", " ", 
+           RowBox[{"2", 
+            SuperscriptBox["\[Nu]", "2"]}]}], ")"}], " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"s", " ", "-", " ", "\[Sigma]"}], ")"}], "2"]}], "  ", "-",
+         "  ", 
+        RowBox[{"8", " ", "\[Sigma]", " ", 
+         SuperscriptBox["\[Nu]", "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{"s", " ", "-", " ", "\[Sigma]"}], ")"}]}], "  ", "+", "  ", 
+        RowBox[{
+         SuperscriptBox["\[Sigma]", "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           SuperscriptBox["\[Sigma]", "2"], " ", "-", " ", 
+           RowBox[{"4", " ", 
+            SuperscriptBox["\[Nu]", "2"]}]}], ")"}]}]}]]}], "2"]]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    SubscriptBox["d", "2"], "[", 
+    RowBox[{"s_", ",", "  ", "\[Nu]_", ",", "  ", "\[Sigma]_"}], "]"}], "  ", 
+   ":=", "  ", 
+   SqrtBox[
+    FractionBox[
+     RowBox[{
+      RowBox[{"-", " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"s", " ", "-", " ", "\[Sigma]"}], ")"}], "2"]}], "   ", "-", 
+      "  ", 
+      SuperscriptBox["\[Sigma]", "2"], "   ", "+", "   ", 
+      RowBox[{"2", " ", 
+       SuperscriptBox["\[Nu]", "2"]}], "   ", "-", "   ", 
+      SqrtBox[
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"s", " ", "-", " ", "\[Sigma]"}], ")"}], "4"], "  ", "-", 
+        "  ", 
+        RowBox[{"2", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           SuperscriptBox["\[Sigma]", "2"], " ", "+", " ", 
+           RowBox[{"2", 
+            SuperscriptBox["\[Nu]", "2"]}]}], ")"}], " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"s", " ", "-", " ", "\[Sigma]"}], ")"}], "2"]}], "  ", "-",
+         "  ", 
+        RowBox[{"8", " ", "\[Sigma]", " ", 
+         SuperscriptBox["\[Nu]", "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{"s", " ", "-", " ", "\[Sigma]"}], ")"}]}], "  ", "+", "  ", 
+        RowBox[{
+         SuperscriptBox["\[Sigma]", "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           SuperscriptBox["\[Sigma]", "2"], " ", "-", " ", 
+           RowBox[{"4", " ", 
+            SuperscriptBox["\[Nu]", "2"]}]}], ")"}]}]}]]}], "2"]]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.5491392831080303`*^9, 3.54913931689769*^9}, {
+  3.54913935132695*^9, 3.5491393513893504`*^9}, {3.549141925564289*^9, 
+  3.549141928278694*^9}, {3.549162596621562*^9, 3.549162645738284*^9}, {
+  3.5491626775770493`*^9, 3.5491626814732647`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[Lambda]", "1"], "[", 
+     RowBox[{
+     "s_", ",", "  ", "\[Mu]_", ",", "  ", "\[Nu]_", ",", "  ", "\[Sigma]_"}],
+      "]"}], "  ", ":=", "  ", 
+    RowBox[{"\[Mu]", "  ", "+", "  ", 
+     RowBox[{
+      SubscriptBox["d", "1"], "[", 
+      RowBox[{"s", ",", "  ", "\[Nu]", ",", "  ", "\[Sigma]"}], "]"}]}]}], 
+   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[Lambda]", "2"], "[", 
+     RowBox[{
+     "s_", ",", "  ", "\[Mu]_", ",", "  ", "\[Nu]_", ",", "  ", "\[Sigma]_"}],
+      "]"}], "  ", ":=", "  ", 
+    RowBox[{"\[Mu]", "  ", "+", "  ", 
+     RowBox[{
+      SubscriptBox["d", "2"], "[", 
+      RowBox[{"s", ",", "  ", "\[Nu]", ",", "  ", "\[Sigma]"}], "]"}]}]}], 
+   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[Lambda]", "3"], "[", 
+     RowBox[{
+     "s_", ",", "  ", "\[Mu]_", ",", "  ", "\[Nu]_", ",", "  ", "\[Sigma]_"}],
+      "]"}], "  ", ":=", "  ", 
+    RowBox[{"\[Mu]", "  ", "-", "  ", 
+     RowBox[{
+      SubscriptBox["d", "1"], "[", 
+      RowBox[{"s", ",", "  ", "\[Nu]", ",", "  ", "\[Sigma]"}], "]"}]}]}], 
+   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    SubscriptBox["\[Lambda]", "4"], "[", 
+    RowBox[{
+    "s_", ",", "  ", "\[Mu]_", ",", "  ", "\[Nu]_", ",", "  ", "\[Sigma]_"}], 
+    "]"}], "  ", ":=", "  ", 
+   RowBox[{"\[Mu]", "  ", "-", "  ", 
+    RowBox[{
+     SubscriptBox["d", "2"], "[", 
+     RowBox[{"s", ",", "  ", "\[Nu]", ",", "  ", "\[Sigma]"}], "]"}]}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.549139091040493*^9, 3.549139246463566*^9}, {
+  3.549139290892444*^9, 3.549139299332059*^9}, {3.549139368954981*^9, 
+  3.549139445987917*^9}, {3.5491395866845636`*^9, 3.549139597573383*^9}, {
+  3.5491396479458714`*^9, 3.5491396573370876`*^9}, {3.5491626650563545`*^9, 
+  3.549162700433318*^9}, {3.549162765402825*^9, 3.549162780733676*^9}}],
+
+Cell["Check the solutions", "Text",
+ CellChangeTimes->{{3.5491395167496405`*^9, 3.5491395206184473`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[CapitalDelta]", "[", 
+  RowBox[{
+   SubscriptBox["\[Lambda]", "1"], "[", 
+   RowBox[{
+   "s", ",", " ", "\[Mu]", ",", "  ", "\[Nu]", ",", "  ", "\[Sigma]"}], "]"}],
+   "]"}]], "Input",
+ CellChangeTimes->{{3.549139537950078*^9, 3.549139542567686*^9}, {
+  3.5491396001785874`*^9, 3.5491396003501873`*^9}, {3.549139635029049*^9, 
+  3.5491396354190493`*^9}, {3.5491627117619476`*^9, 3.5491627340060787`*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{
+  3.5491395481056957`*^9, {3.5491396185242195`*^9, 3.5491396291478386`*^9}, 
+   3.549139666634704*^9, 3.5491409979548345`*^9, 3.549141953223138*^9, 
+   3.5491627472928195`*^9, {3.5491627871280313`*^9, 3.549162816626575*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[CapitalDelta]", "[", 
+  RowBox[{
+   SubscriptBox["\[Lambda]", "2"], "[", 
+   RowBox[{
+   "s", ",", " ", "\[Mu]", ",", "  ", "\[Nu]", ",", "  ", "\[Sigma]"}], "]"}],
+   "]"}]], "Input",
+ CellChangeTimes->{{3.549139537950078*^9, 3.549139542567686*^9}, {
+  3.5491396001785874`*^9, 3.5491396003501873`*^9}, {3.549139635029049*^9, 
+  3.5491396354190493`*^9}, {3.5491627117619476`*^9, 3.5491627340060787`*^9}, {
+  3.549162804066967*^9, 3.549162804103969*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.5491628177046356`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[CapitalDelta]", "[", 
+  RowBox[{
+   SubscriptBox["\[Lambda]", "3"], "[", 
+   RowBox[{
+   "s", ",", " ", "\[Mu]", ",", "  ", "\[Nu]", ",", "  ", "\[Sigma]"}], "]"}],
+   "]"}]], "Input",
+ CellChangeTimes->{{3.549139537950078*^9, 3.549139542567686*^9}, {
+  3.5491396001785874`*^9, 3.5491396003501873`*^9}, {3.549139635029049*^9, 
+  3.5491396354190493`*^9}, {3.5491627117619476`*^9, 3.5491627340060787`*^9}, {
+  3.54916280967128*^9, 3.5491628097132826`*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.549162818569685*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[CapitalDelta]", "[", 
+  RowBox[{
+   SubscriptBox["\[Lambda]", "4"], "[", 
+   RowBox[{
+   "s", ",", " ", "\[Mu]", ",", "  ", "\[Nu]", ",", "  ", "\[Sigma]"}], "]"}],
+   "]"}]], "Input",
+ CellChangeTimes->{{3.549139537950078*^9, 3.549139542567686*^9}, {
+  3.5491396001785874`*^9, 3.5491396003501873`*^9}, {3.549139635029049*^9, 
+  3.5491396354190493`*^9}, {3.5491627117619476`*^9, 3.5491627340060787`*^9}, {
+  3.5491628141604395`*^9, 3.549162814218443*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.54916281937573*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1350, 633},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (February 23, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 108, 1, 83, "Title"],
+Cell[690, 25, 99, 1, 29, "Text"],
+Cell[792, 28, 932, 23, 72, "Input"],
+Cell[1727, 53, 102, 1, 29, "Text"],
+Cell[1832, 56, 3322, 94, 126, "Input"],
+Cell[5157, 152, 2068, 56, 152, "Input"],
+Cell[7228, 210, 105, 1, 29, "Text"],
+Cell[CellGroupData[{
+Cell[7358, 215, 430, 9, 31, "Input"],
+Cell[7791, 226, 273, 4, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8101, 235, 479, 10, 31, "Input"],
+Cell[8583, 247, 72, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8692, 253, 480, 10, 31, "Input"],
+Cell[9175, 265, 70, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9282, 271, 481, 10, 31, "Input"],
+Cell[9766, 283, 69, 1, 30, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

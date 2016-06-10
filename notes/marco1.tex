@@ -1,0 +1,210 @@
+%\documentclass{article}
+\documentclass[12pt]{article}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+\usepackage{geometry}
+\geometry{letterpaper}
+
+%\usepackage{showlabels}
+
+\textwidth = 6.0 in
+\textheight = 8.5 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.2 in
+\headheight = 0.0 in
+\headsep = 0.0 in
+%\parskip = 0.05in
+\parindent = 0.35in
+
+
+%% common definitions
+\def\stackunder#1#2{\mathrel{\mathop{#2}\limits_{#1}}}
+\def\beqn{\begin{eqnarray}}
+\def\eeqn{\end{eqnarray}}
+\def\nn{\nonumber}
+\def\baselinestretch{1.1}
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\ba{\beq\new\begin{array}{c}}
+\def\ea{\end{array}\eeq}
+\def\be{\ba}
+\def\ee{\ea}
+\def\stackreb#1#2{\mathrel{\mathop{#2}\limits_{#1}}}
+\def\Tr{{\rm Tr}}
+\newcommand{\gsim}{\lower.7ex\hbox{$
+\;\stackrel{\textstyle>}{\sim}\;$}}
+\newcommand{\lsim}{\lower.7ex\hbox{$
+\;\stackrel{\textstyle<}{\sim}\;$}}
+\newcommand{\nfour}{${\mathcal N}=4$ }
+\newcommand{\ntwo}{${\mathcal N}=2$ }
+\newcommand{\ntwon}{${\mathcal N}=2$}
+\newcommand{\ntwot}{${\mathcal N}= \left(2,2\right) $ }
+\newcommand{\ntwoo}{${\mathcal N}= \left(0,2\right) $ }
+\newcommand{\none}{${\mathcal N}=1$ }
+\newcommand{\nonen}{${\mathcal N}=1$}
+\newcommand{\vp}{\varphi}
+\newcommand{\pt}{\partial}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\gs}{g^{2}}
+\newcommand{\qt}{\tilde q}
+
+%%
+\newcommand{\p}{\partial}
+\newcommand{\wt}{\widetilde}
+\newcommand{\ov}{\overline}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\md}{\mathcal{D}}
+
+\newcommand{\GeV}{{\rm GeV}}
+\newcommand{\eV}{{\rm eV}}
+\newcommand{\Heff}{{\mathcal{H}_{\rm eff}}}
+\newcommand{\Leff}{{\mathcal{L}_{\rm eff}}}
+\newcommand{\el}{{\rm EM}}
+\newcommand{\uflavor}{\mathbf{1}_{\rm flavor}}
+\newcommand{\lgr}{\left\lgroup}
+\newcommand{\rgr}{\right\rgroup}
+
+\newcommand{\Mpl}{M_{\rm Pl}}
+\newcommand{\suc}{{{\rm SU}_{\rm C}(3)}}
+\newcommand{\sul}{{{\rm SU}_{\rm L}(2)}}
+\newcommand{\sutw}{{\rm SU}(2)}
+\newcommand{\suth}{{\rm SU}(3)}
+\newcommand{\ue}{{\rm U}(1)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Slash character...
+\def\slashed#1{\setbox0=\hbox{$#1$}             % set a box for #1
+   \dimen0=\wd0                                 % and get its size
+   \setbox1=\hbox{/} \dimen1=\wd1               % get size of /
+   \ifdim\dimen0>\dimen1                        % #1 is bigger
+      \rlap{\hbox to \dimen0{\hfil/\hfil}}      % so center / in box
+      #1                                        % and print #1
+   \else                                        % / is bigger
+      \rlap{\hbox to \dimen1{\hfil$#1$\hfil}}   % so center #1
+      /                                         % and print /
+   \fi}                                        %
+
+%%EXAMPLE:  $\slashed{E}$ or $\slashed{E}_{t}$
+
+%%
+
+\newcommand{\LN}{\Lambda_\text{SU($N$)}}
+\newcommand{\sunu}{{\rm SU($N$) $\times$ U(1)} }
+\newcommand{\sunun}{{\rm SU($N$) $\times$ U(1)}}
+\def\cfl {$\text{SU($N$)}_{\rm C+F}$ }
+\newcommand{\mUp}{m_{\rm U(1)}^{+}}
+\newcommand{\mUm}{m_{\rm U(1)}^{-}}
+\newcommand{\mNp}{m_\text{SU($N$)}^{+}}
+\newcommand{\mNm}{m_\text{SU($N$)}^{-}}
+\newcommand{\AU}{\mc{A}^{\rm U(1)}}
+\newcommand{\AN}{\mc{A}^\text{SU($N$)}}
+\newcommand{\aU}{a^{\rm U(1)}}
+\newcommand{\aN}{a^\text{SU($N$)}}
+\newcommand{\baU}{\ov{a}{}^{\rm U(1)}}
+\newcommand{\baN}{\ov{a}{}^\text{SU($N$)}}
+\newcommand{\lU}{\lambda^{\rm U(1)}}
+\newcommand{\lN}{\lambda^\text{SU($N$)}}
+%\newcommand{\Tr}{{\rm Tr\,}}
+\newcommand{\bxir}{\ov{\xi}{}_R}
+\newcommand{\bxil}{\ov{\xi}{}_L}
+\newcommand{\xir}{\xi_R}
+\newcommand{\xil}{\xi_L}
+\newcommand{\bzl}{\ov{\zeta}{}_L}
+\newcommand{\bzr}{\ov{\zeta}{}_R}
+\newcommand{\zr}{\zeta_R}
+\newcommand{\zl}{\zeta_L}
+\newcommand{\nbar}{\ov{n}}
+
+\newcommand{\loU}{\lambda_0^{\rm U(1)}}
+\newcommand{\llU}{\lambda_1^{\rm U(1)}}
+\newcommand{\loN}{\lambda_0^\text{SU($N$)}}
+\newcommand{\llN}{\lambda_1^\text{SU($N$)}}
+\newcommand{\poU}{\psi_0^{\rm U(1)}}
+\newcommand{\plU}{\psi_1^{\rm U(1)}}
+\newcommand{\poN}{\psi_0^\text{SU($N$)}}
+\newcommand{\plN}{\psi_1^\text{SU($N$)}}
+
+\newcommand{\CPC}{CP($N-1$)$\times$C }
+\newcommand{\CPCn}{CP($N-1$)$\times$C}
+
+\newcommand{\MN}{M_\text{SU($N$)}}
+\newcommand{\MU}{M_{\rm U(1)}}
+
+\newcommand{\tgamma}{\wt{\gamma}}
+\newcommand{\btgamma}{\ov{\tgamma}}
+
+\begin{document}
+
+	We accept that the electric and magnetic fields are
+\[
+	E_k  ~~~~=~~~~  -\, \frac{I}{a^2}\, \bigg( \frac V I \bigg)^\prime\,,
+	\qquad\qquad
+	B_k  ~~~~=~~~~  \pm\, \frac{k}{a^2}\, V
+\]
+	and their contributions to the energy density are
+\begin{align*}
+%
+	\rho_E  &  ~~~~=~~~~  \frac{4\pi}{a^4}\, I^2\, \int dk\, k^2\,  \bigg| \left(\frac V I \right)^\prime \bigg|^2
+	\\
+%
+	\rho_B  &  ~~~~=~~~~  \frac{4\pi}{a^4}\, I^2\, \int dk\, k^4\,  \bigg|\; \frac V I \;\bigg|^2
+\end{align*}
+	These are the formulas from your email.
+
+	Now let us suppose, as before, that
+\[
+	I  ~~~~\propto~~~~  \tau^n\,,
+	\qquad
+	\text{and}
+	\qquad
+	V_\lambda  ~~~~\propto~~~~  \tau^m\\,
+\]
+	where $ n $ and $ m $ are integers and of course $ m $ will depend on $ n $, being a solution of the equations of motion.
+	They can be positive or negative, does not matter now.
+
+	Now,
+\[
+	V/I  ~~~~=~~~~  \tau^{m-n}
+	\qquad
+	\text{hence}
+	\qquad
+	(V/I)^\prime  ~~~~=~~~~  \tau^{m-n-1}\,,
+\]
+	up to numerical coefficients.
+
+	The densities are, multiplied by the same (functional) proportionality coefficients,
+\begin{align*}
+%
+	\rho_E  & ~~~~\propto~~~~ \int dk\, k^2\, \big(\tau^{m-n-1}\big)^2  ~~~~=~~~~ \int_{Ha_i}^{Ha_0}\, dk\, k^2 \cdot \tau^{2m - 2n - 2} \\
+%
+	\rho_B  & ~~~~\propto~~~~ \int dk\, k^4\, \big(\tau^{m-n}\big)^2    ~~~~=~~~~ \int_{Ha_i}^{Ha_0}\, dk\, k^4 \cdot \tau^{2m - 2n}
+\end{align*}
+
+	And hence,
+\begin{align*}
+%
+	\rho_E  & ~~~~\propto~~~~ \big(Ha_0\big)^3 \cdot \tau^{2m - 2n - 2}  ~~~~\propto~~~~  \tau^{2m-2n-5} \\
+%
+	\rho_B  & ~~~~\propto~~~~ \big(Ha_0\big)^5 \cdot \tau^{2m - 2n}  ~~~~\propto~~~~ \tau^{2m-2n-5}
+\end{align*}
+	I don't see how one is growing much bigger than the other.
+
+\pagebreak
+	Mukhanov did not write the following. 
+	In the {\it strong coupling} case, he never mentioned that electric field becomes much bigger than the magnetic field.
+	He did say that the coupling becomes strong --- the known issue --- but pretty much nothing else 
+	(now in the case of weak coupling --- which I am not discussing --- he did say that there is an excess of electromagnetic energy
+	compared to the inflationary potential). 
+	
+\vspace{8mm}
+	Imagine a regular electromagnetism where we do not have the restriction that $ e_0 $ is order one today, but can be 
+	accepted to be negligible.
+	Let it be order one before the inflation and zero after the inflation 
+	(the same ``strong coupling'' scenario but now $ e $  is renormalized so it is weak at all times).
+	Then there does not seem to be a problem that the electric field greatly exceeds the magnetic field, 
+	nor that their overall density disturbs the inflation.
+	Do you agree?
+
+\end{document}

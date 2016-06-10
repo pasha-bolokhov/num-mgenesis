@@ -1,0 +1,90 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2463,         81]
+NotebookOptionsPosition[      2055,         62]
+NotebookOutlinePosition[      2420,         78]
+CellTagsIndexPosition[      2377,         75]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Analytical Solution", "Title",
+ CellChangeTimes->{{3.5493257527967367`*^9, 3.5493257558139057`*^9}}],
+
+Cell["\<\
+Introduce the matrix of the differential equation\
+\>", "Subtitle",
+ CellChangeTimes->{{3.5493257803032637`*^9, 3.549325791826903*^9}, {
+  3.549326736413683*^9, 3.5493267392138376`*^9}, {3.5499654647243633`*^9, 
+  3.549965491107832*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"System", "[", 
+    RowBox[{"\[Mu]_", ",", "  ", "\[Nu]_", ",", " ", "\[Sigma]_"}], " ", 
+    "]"}], " ", ":=", "  ", 
+   RowBox[{"(", "\[NoBreak]", GridBox[{
+      {"\[Mu]", "\[Nu]", "0", 
+       RowBox[{"-", "\[Sigma]"}]},
+      {"\[Nu]", "\[Mu]", 
+       RowBox[{"s", "-", "\[Sigma]"}], "0"},
+      {"0", 
+       RowBox[{"-", 
+        RowBox[{"(", 
+         RowBox[{"s", "-", "\[Sigma]"}], ")"}]}], "\[Mu]", 
+       RowBox[{"-", "\[Nu]"}]},
+      {"\[Sigma]", "0", 
+       RowBox[{"-", "\[Nu]"}], "\[Mu]"}
+     }], "\[NoBreak]", ")"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.5493266642697396`*^9, 3.5493266660058346`*^9}, {
+  3.5493267176506433`*^9, 3.5493267952419505`*^9}, {3.5493268373072205`*^9, 
+  3.5493268383542805`*^9}, {3.5499655287528067`*^9, 3.5499655440846586`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.5493261781160517`*^9, 3.549326180108163*^9}, {
+   3.549327034184972*^9, 3.54932704985884*^9}, {3.549327207670456*^9, 
+   3.5493272234173326`*^9}, {3.5493273981917133`*^9, 3.549327408334277*^9}, 
+   3.549965495395048*^9}]
+}, Open  ]]
+},
+WindowSize->{1350, 633},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification->1.25,
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (February 23, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 106, 1, 103, "Title"],
+Cell[688, 25, 247, 5, 62, "Subtitle"],
+Cell[938, 32, 829, 21, 86, "Input"],
+Cell[1770, 55, 269, 4, 35, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
